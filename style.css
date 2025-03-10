@@ -23,17 +23,21 @@ button {
 button:active {
   background-color: hsla(150, 92%, 74%, 0.466);
 }
-#AC {
-  width: 160px;
-}
+#AC,
 #equal {
   width: 160px;
+  background-color: hsl(0, 93%, 71%);
 }
-input {
+#multiply,
+#divide {
+  background-color: hsl(0, 93%, 71%);
+}
+#display {
   width: 400px;
   height: 100px;
   background-color: lightgray;
-  pointer-events: none;
+  font-size: 80px;
+  font-weight: bold;
 }
 #calculator {
   border: 10px black solid;
