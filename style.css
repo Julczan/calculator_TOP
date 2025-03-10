@@ -17,6 +17,8 @@ body {
 button {
   height: 80px;
   width: 80px;
+  font-size: 40px;
+  font-weight: bold;
   border-radius: 2px;
   background-color: hsl(150, 93%, 74%);
 }
@@ -28,8 +30,13 @@ button:active {
   width: 160px;
   background-color: hsl(0, 93%, 71%);
 }
+#equal {
+  width: 400px;
+}
 #multiply,
-#divide {
+#divide,
+#add,
+#subtract {
   background-color: hsl(0, 93%, 71%);
 }
 #display {

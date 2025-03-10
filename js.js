@@ -59,6 +59,12 @@ const display = document.querySelector("#display");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
+    if (button.textContent === "=") {
+      console.log("equal");
+    }
+    let result = [];
+    result = button.textContent;
     display.textContent += button.textContent;
+    console.log(result);
   });
 });
