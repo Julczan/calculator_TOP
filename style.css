@@ -18,6 +18,10 @@ button {
   height: 80px;
   width: 80px;
   border-radius: 2px;
+  background-color: hsl(150, 93%, 74%);
+}
+button:active {
+  background-color: hsla(150, 92%, 74%, 0.466);
 }
 #AC {
   width: 160px;
@@ -29,6 +33,7 @@ input {
   width: 400px;
   height: 100px;
   background-color: lightgray;
+  pointer-events: none;
 }
 #calculator {
   border: 10px black solid;
