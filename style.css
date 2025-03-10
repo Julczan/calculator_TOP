@@ -1,3 +1,35 @@
 body {
-  background-color: black;
+  background-color: lightblue;
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#button-container {
+  height: 400px;
+  width: 400px;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+}
+button {
+  height: 80px;
+  width: 80px;
+  border-radius: 2px;
+}
+#AC {
+  width: 160px;
+}
+#equal {
+  width: 160px;
+}
+input {
+  width: 400px;
+  height: 100px;
+  background-color: lightgray;
+}
+#calculator {
+  border: 10px black solid;
 }

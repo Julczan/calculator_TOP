@@ -34,3 +34,5 @@ function divide(a, b) {
   }
   return a / b;
 }
+
+function operate(firstNum, operator, secondNum) {}
