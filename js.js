@@ -54,17 +54,19 @@ function operate(firstNum, operator, secondNum) {
   return result;
 }
 
-const buttons = document.querySelectorAll("button");
-const display = document.querySelector("#display");
+const numberBtns = document.querySelectorAll(".number-btn");
+numberBtns.forEach((button) => {});
+//Store the first and second number and
+// call operate with them when =
 
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    if (button.textContent === "=") {
-      console.log("equal");
-    }
-    let result = [];
-    result = button.textContent;
-    display.textContent += button.textContent;
-    console.log(result);
-  });
-});
+//
+//If I click on the operator first nothing happens
+// It has to be number -> operator -> number
+// if I click on a number it should be stored in the first number
+// every number until I click an operator
+//if I click an operator it should be stored in the operatr
+//then another number stored in second number
+//if I click another operator the result has to appear
+let firstNum = [];
+let secondNum = [];
+let operator = [];

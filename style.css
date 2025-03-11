@@ -19,6 +19,7 @@ button {
   width: 80px;
   font-size: 40px;
   font-weight: bold;
+  border: 3px solid black;
   border-radius: 2px;
   background-color: hsl(150, 93%, 74%);
 }
@@ -47,5 +48,6 @@ button:active {
   font-weight: bold;
 }
 #calculator {
-  border: 10px black solid;
+  border: 5px black solid;
+  border-radius: 5px;
 }
