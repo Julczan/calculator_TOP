@@ -54,19 +54,63 @@ function operate(firstNum, operator, secondNum) {
   return result;
 }
 
+const buttons = document.querySelectorAll("button");
+const display = document.querySelector("#display");
+const clearBtn = document.querySelector("#AC");
+const operatorBtns = document.querySelectorAll(".operator-btn");
+const equalBtn = document.querySelector("#equal");
 const numberBtns = document.querySelectorAll(".number-btn");
-numberBtns.forEach((button) => {});
+
+let firstNum = [];
+let operator = [];
+let secondNum = [];
+
+numberBtns.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (operator.length === 0) {
+      firstNum.push(button.textContent);
+    } else if (operator.length === 1) {
+      secondNum.push(button.textContent);
+    }
+  });
+});
+
+operatorBtns.forEach((button) => {
+  button.addEventListener("click", () => {
+    operator.push(button.textContent);
+  });
+});
+
+clearBtn.addEventListener("click", () => {
+  display.textContent = "";
+  firstNum = [];
+  operator = [];
+  secondNum = [];
+});
+
+equalBtn.addEventListener("click", () => {
+  if (firstNum.length > 0) {
+    firstNum = +firstNum.join("");
+  }
+  if (secondNum.length > 0) {
+    secondNum = +secondNum.join("");
+  }
+  if (operator.length > 0) {
+    operator = operator.join("");
+  }
+  let result = operate(firstNum, operator, secondNum);
+  display.textContent = result;
+});
+
 //Store the first and second number and
 // call operate with them when =
 
+//if the button is a number button it should be stored
+//store it until I click an operator button
+//the operator also has to be stored but separately
+//After the operator the second number has to be stored until
+//I click = or another operator
+//When I click = the operate() has to be called with the
+// operator and numbers
 //
-//If I click on the operator first nothing happens
-// It has to be number -> operator -> number
-// if I click on a number it should be stored in the first number
-// every number until I click an operator
-//if I click an operator it should be stored in the operatr
-//then another number stored in second number
-//if I click another operator the result has to appear
-let firstNum = [];
-let secondNum = [];
-let operator = [];
+//

@@ -29,16 +29,21 @@ button:active {
 #AC,
 #equal {
   width: 160px;
-  background-color: hsl(0, 93%, 71%);
 }
 #equal {
-  width: 400px;
+  width: 320px;
 }
-#multiply,
-#divide,
-#add,
-#subtract {
+
+.operator-btn,
+.clear-btn,
+.equal-btn {
   background-color: hsl(0, 93%, 71%);
+}
+
+.operator-btn:active,
+.clear-btn:active,
+.equal-btn:active {
+  background-color: hsla(0, 93%, 71%, 0.527);
 }
 #display {
   width: 400px;
@@ -49,5 +54,7 @@ button:active {
 }
 #calculator {
   border: 5px black solid;
-  border-radius: 5px;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: grey;
 }
