@@ -77,7 +77,10 @@ numberBtns.forEach((button) => {
 
 operatorBtns.forEach((button) => {
   button.addEventListener("click", () => {
-    operator.push(button.textContent);
+    if (operator.length === 0) {
+      operator.push(button.textContent);
+    } else {
+    }
   });
 });
 
@@ -89,15 +92,16 @@ clearBtn.addEventListener("click", () => {
 });
 
 equalBtn.addEventListener("click", () => {
-  if (firstNum.length > 0) {
+  const isAcceptable =
+    firstNum.length > 0 && operator.length === 1 && secondNum.length > 0;
+  if (isAcceptable) {
     firstNum = +firstNum.join("");
-  }
-  if (secondNum.length > 0) {
     secondNum = +secondNum.join("");
-  }
-  if (operator.length > 0) {
     operator = operator.join("");
   }
+
+  console.log(operator);
+
   let result = operate(firstNum, operator, secondNum);
   display.textContent = result;
 });
