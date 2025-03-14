@@ -10,21 +10,37 @@
     <div id="calculator">
       <div id="display"></div>
       <div id="button-container">
-        <button class="number-btn">7</button>
-        <button class="number-btn">8</button>
-        <button class="number-btn">9</button>
+        <button class="number-btn" onclick="appendNumber('7')">7</button>
+        <button class="number-btn" onclick="appendNumber('8')">8</button>
+        <button class="number-btn" onclick="appendNumber('9')">9</button>
         <button class="clear-btn" id="AC">AC</button>
-        <button class="number-btn">4</button>
-        <button class="number-btn">5</button>
-        <button class="number-btn">6</button>
-        <button class="operator-btn" id="multiply">*</button>
-        <button class="operator-btn" id="divide">/</button>
-        <button class="number-btn">1</button>
-        <button class="number-btn">2</button>
-        <button class="number-btn">3</button>
-        <button class="operator-btn" id="add">+</button>
-        <button class="operator-btn" id="subtract">-</button>
-        <button class="number-btn">0</button>
+        <button class="number-btn" onclick="appendNumber('4')">4</button>
+        <button class="number-btn" onclick="appendNumber('5')">5</button>
+        <button class="number-btn" onclick="appendNumber('6')">6</button>
+        <button
+          class="operator-btn"
+          id="multiply"
+          onclick="appendOperator('*')"
+        >
+          *
+        </button>
+        <button class="operator-btn" id="divide" onclick="appendOperator('/')">
+          /
+        </button>
+        <button class="number-btn" onclick="appendNumber('1')">1</button>
+        <button class="number-btn" onclick="appendNumber('2')">2</button>
+        <button class="number-btn" onclick="appendNumber('3')">3</button>
+        <button class="operator-btn" id="add" onclick="appendOperator('+')">
+          +
+        </button>
+        <button
+          class="operator-btn"
+          id="subtract"
+          onclick="appendOperator('-')"
+        >
+          -
+        </button>
+        <button class="number-btn" onclick="appendNumber('0')">0</button>
 
         <button class="equal-btn" id="equal">=</button>
       </div>
