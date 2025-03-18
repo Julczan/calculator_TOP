@@ -37,29 +37,53 @@ function operate(firstNum, operator, secondNum) {
 const display = document.querySelector("#display");
 const numberBtns = document.querySelectorAll(".number-btn");
 const equal = document.querySelector("#equal");
+const clear = document.querySelector("#AC");
 
 let prevNumber = "";
 let currNumber = "";
 let currOperator = "";
+let result = "";
 
 function appendNumber(number) {
-  if (currOperator === "") {
-    prevNumber += number;
-  } else {
-    currNumber += number;
+  if (result !== "") {
+    result = "";
   }
+  currNumber += number;
+  display.textContent = currNumber;
 }
 
 function appendOperator(operator) {
-  currOperator += operator;
+  if (result !== "") {
+    prevNumber = result;
+    currOperator = operator;
+    currNumber = "";
+  } else {
+    currOperator = operator;
+    prevNumber = currNumber;
+    currNumber = "";
+  }
 }
 
 equal.addEventListener("click", () => {
   console.log(prevNumber);
   console.log(currOperator);
-
   console.log(currNumber);
 
-  let result = operate(+prevNumber, currOperator, +currNumber);
+  const isAcceptable =
+    prevNumber !== "" && currOperator !== "" && currNumber !== "";
+  if (isAcceptable) {
+    result = operate(+prevNumber, currOperator, +currNumber);
+    currNumber = "";
+    currOperator = "";
+  }
+
   display.textContent = result;
+});
+
+clear.addEventListener("click", () => {
+  display.textContent = "";
+  prevNumber = "";
+  currNumber = "";
+  currOperator = "";
+  result = "";
 });
