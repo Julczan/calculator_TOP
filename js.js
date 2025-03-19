@@ -53,11 +53,20 @@ function appendNumber(number) {
 }
 
 function appendOperator(operator) {
+  const isAcceptable =
+    prevNumber !== "" && currOperator !== "" && currNumber !== "";
+  if (isAcceptable) {
+    result = operate(+prevNumber, currOperator, +currNumber);
+    display.textContent = result;
+    currNumber = "";
+    currOperator = "";
+  }
+
   if (result !== "") {
     prevNumber = result;
     currOperator = operator;
     currNumber = "";
-  } else {
+  } else if (result === "") {
     currOperator = operator;
     prevNumber = currNumber;
     currNumber = "";
