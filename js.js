@@ -66,7 +66,7 @@ function appendOperator(operator) {
     prevNumber = result;
     currOperator = operator;
     currNumber = "";
-  } else if (result === "") {
+  } else if (result === "" && currOperator === "") {
     currOperator = operator;
     prevNumber = currNumber;
     currNumber = "";
@@ -74,10 +74,6 @@ function appendOperator(operator) {
 }
 
 equal.addEventListener("click", () => {
-  console.log(prevNumber);
-  console.log(currOperator);
-  console.log(currNumber);
-
   const isAcceptable =
     prevNumber !== "" && currOperator !== "" && currNumber !== "";
   if (isAcceptable) {
